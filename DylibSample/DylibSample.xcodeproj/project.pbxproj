@@ -1,0 +1,169 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B10222728979E2D0038C50B /* DylibSample.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9B10222628979E2D0038C50B /* DylibSample.metal */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9B10222328979E2D0038C50B /* DylibSample.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = DylibSample.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B10222628979E2D0038C50B /* DylibSample.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DylibSample.metal; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		9B10221C28979E2D0038C50B = {
+			isa = PBXGroup;
+			children = (
+				9B10222528979E2D0038C50B /* DylibSample */,
+				9B10222428979E2D0038C50B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B10222428979E2D0038C50B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B10222328979E2D0038C50B /* DylibSample.metallib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B10222528979E2D0038C50B /* DylibSample */ = {
+			isa = PBXGroup;
+			children = (
+				9B10222628979E2D0038C50B /* DylibSample.metal */,
+			);
+			path = DylibSample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B10222228979E2D0038C50B /* DylibSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B10222A28979E2D0038C50B /* Build configuration list for PBXNativeTarget "DylibSample" */;
+			buildPhases = (
+				9B10222128979E2D0038C50B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DylibSample;
+			productName = DylibSample;
+			productReference = 9B10222328979E2D0038C50B /* DylibSample.metallib */;
+			productType = "com.apple.product-type.metal-library";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B10221D28979E2D0038C50B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					9B10222228979E2D0038C50B = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 9B10222028979E2D0038C50B /* Build configuration list for PBXProject "DylibSample" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B10221C28979E2D0038C50B;
+			productRefGroup = 9B10222428979E2D0038C50B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B10222228979E2D0038C50B /* DylibSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B10222128979E2D0038C50B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B10222728979E2D0038C50B /* DylibSample.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9B10222828979E2D0038C50B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9B10222928979E2D0038C50B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		9B10222B28979E2D0038C50B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W78LHQDR6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9B10222C28979E2D0038C50B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W78LHQDR6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B10222028979E2D0038C50B /* Build configuration list for PBXProject "DylibSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B10222828979E2D0038C50B /* Debug */,
+				9B10222928979E2D0038C50B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B10222A28979E2D0038C50B /* Build configuration list for PBXNativeTarget "DylibSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B10222B28979E2D0038C50B /* Debug */,
+				9B10222C28979E2D0038C50B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B10221D28979E2D0038C50B /* Project object */;
+}
