@@ -13,6 +13,10 @@
 		9B1F137228A367F300EC9D9C /* RxMemoKxcoding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F137028A367F300EC9D9C /* RxMemoKxcoding.xcdatamodeld */; };
 		9B1F137428A367F400EC9D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B1F137328A367F400EC9D9C /* Assets.xcassets */; };
 		9B1F137728A367F400EC9D9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B1F137528A367F400EC9D9C /* LaunchScreen.storyboard */; };
+		9B1F138428A3AA4400EC9D9C /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F138328A3AA4400EC9D9C /* Memo.swift */; };
+		9B1F138628A3AC4000EC9D9C /* MemoStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F138528A3AC4000EC9D9C /* MemoStorageType.swift */; };
+		9B1F138928A3ACCD00EC9D9C /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F138828A3ACCD00EC9D9C /* CoreDataStorage.swift */; };
+		9B1F138C28A4936800EC9D9C /* MemoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F138B28A4936800EC9D9C /* MemoStorage.swift */; };
 		B6C3647113606E2946905CE4 /* Pods_RxMemoKxcoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03ACCDAFFF2497C9659CCD7 /* Pods_RxMemoKxcoding.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		9B1F137328A367F400EC9D9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B1F137628A367F400EC9D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B1F137828A367F400EC9D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B1F138328A3AA4400EC9D9C /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		9B1F138528A3AC4000EC9D9C /* MemoStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStorageType.swift; sourceTree = "<group>"; };
+		9B1F138828A3ACCD00EC9D9C /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		9B1F138B28A4936800EC9D9C /* MemoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStorage.swift; sourceTree = "<group>"; };
 		A03ACCDAFFF2497C9659CCD7 /* Pods_RxMemoKxcoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMemoKxcoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76C7002486C177F7DC78FF3 /* Pods-RxMemoKxcoding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMemoKxcoding.release.xcconfig"; path = "Target Support Files/Pods-RxMemoKxcoding/Pods-RxMemoKxcoding.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +88,6 @@
 				9B1F136928A367F300EC9D9C /* SceneDelegate.swift */,
 				9B1F137328A367F400EC9D9C /* Assets.xcassets */,
 				9B1F137828A367F400EC9D9C /* Info.plist */,
-				9B1F137028A367F300EC9D9C /* RxMemoKxcoding.xcdatamodeld */,
 			);
 			path = RxMemoKxcoding;
 			sourceTree = "<group>";
@@ -88,6 +95,7 @@
 		9B1F137E28A3A89D00EC9D9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B1F138328A3AA4400EC9D9C /* Memo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +119,10 @@
 		9B1F138128A3A8D800EC9D9C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9B1F138528A3AC4000EC9D9C /* MemoStorageType.swift */,
+				9B1F138A28A3ACF400EC9D9C /* CoreData */,
+				9B1F138728A3ACC000EC9D9C /* MemoryStorage */,
+				9B1F138828A3ACCD00EC9D9C /* CoreDataStorage.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -120,6 +132,22 @@
 			children = (
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		9B1F138728A3ACC000EC9D9C /* MemoryStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9B1F138B28A4936800EC9D9C /* MemoStorage.swift */,
+			);
+			path = MemoryStorage;
+			sourceTree = "<group>";
+		};
+		9B1F138A28A3ACF400EC9D9C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9B1F137028A367F300EC9D9C /* RxMemoKxcoding.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		DDFA52A3C2808CBC45836CC9 /* Pods */ = {
@@ -246,9 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1F138928A3ACCD00EC9D9C /* CoreDataStorage.swift in Sources */,
 				9B1F136828A367F300EC9D9C /* AppDelegate.swift in Sources */,
+				9B1F138628A3AC4000EC9D9C /* MemoStorageType.swift in Sources */,
 				9B1F137228A367F300EC9D9C /* RxMemoKxcoding.xcdatamodeld in Sources */,
 				9B1F136A28A367F300EC9D9C /* SceneDelegate.swift in Sources */,
+				9B1F138428A3AA4400EC9D9C /* Memo.swift in Sources */,
+				9B1F138C28A4936800EC9D9C /* MemoStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
