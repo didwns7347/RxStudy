@@ -7,7 +7,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController , ViewModelBindableType{
+    var viewModel : MemoDetailViewModel!
+    func bindViewModel() {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,3 +20,4 @@ class DetailViewController: UIViewController {
     }
     
 
+}
