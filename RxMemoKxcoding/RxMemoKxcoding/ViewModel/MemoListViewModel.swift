@@ -6,6 +6,9 @@
 //
 
 import Foundation
-class MemoListViewModel{
+import RxSwift
+import RxCocoa
+
+class MemoListViewModel : CommonViewModel{
     
 }

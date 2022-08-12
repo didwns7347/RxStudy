@@ -28,6 +28,7 @@
 		9B98EFD728A53599009090AB /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B98EFD628A53599009090AB /* Scene.swift */; };
 		9B98EFD928A543A7009090AB /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B98EFD828A543A7009090AB /* SceneCoordinatorType.swift */; };
 		9B98EFDB28A5444B009090AB /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B98EFDA28A5444B009090AB /* SceneCoordinator.swift */; };
+		9B98EFDD28A5470D009090AB /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B98EFDC28A5470D009090AB /* CommonViewModel.swift */; };
 		B6C3647113606E2946905CE4 /* Pods_RxMemoKxcoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03ACCDAFFF2497C9659CCD7 /* Pods_RxMemoKxcoding.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		9B98EFD628A53599009090AB /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		9B98EFD828A543A7009090AB /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		9B98EFDA28A5444B009090AB /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		9B98EFDC28A5470D009090AB /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		A03ACCDAFFF2497C9659CCD7 /* Pods_RxMemoKxcoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMemoKxcoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76C7002486C177F7DC78FF3 /* Pods-RxMemoKxcoding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMemoKxcoding.release.xcconfig"; path = "Target Support Files/Pods-RxMemoKxcoding/Pods-RxMemoKxcoding.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 				9B98EFCE28A4B605009090AB /* MemoDetailViewModel.swift */,
 				9B98EFD028A4B61B009090AB /* MemoComposeViewModel.swift */,
 				9B98EFD228A4B669009090AB /* ViewModelBindableType.swift */,
+				9B98EFDC28A5470D009090AB /* CommonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B98EFDD28A5470D009090AB /* CommonViewModel.swift in Sources */,
 				9B98EFC928A4B405009090AB /* DetailViewController.swift in Sources */,
 				9B98EFC728A4B368009090AB /* MemoListViewcontroller.swift in Sources */,
 				9B1F138928A3ACCD00EC9D9C /* CoreDataStorage.swift in Sources */,
