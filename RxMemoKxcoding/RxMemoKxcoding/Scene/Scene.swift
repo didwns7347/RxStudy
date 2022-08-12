@@ -26,8 +26,10 @@ extension Scene{
             guard var listVC = nav.viewControllers.first as? MemoListViewcontroller else {
                 fatalError()
             }
-            
-            listVC.bind(viewModel: memoListVIewModel)
+            DispatchQueue.main.async {
+                listVC.bind(viewModel: memoListVIewModel)
+            }
+          
             
             return nav
             
@@ -35,7 +37,9 @@ extension Scene{
             guard var detailVC = storyboard.instantiateViewController(identifier: "DetailVC") as? DetailViewController else{
                 fatalError()
             }
-            detailVC.bind(viewModel: detailVM)
+            DispatchQueue.main.async {
+                detailVC.bind(viewModel: detailVM)
+            }
             return detailVC
             
         case .compose(let composeVM):
@@ -46,8 +50,9 @@ extension Scene{
             guard var composeVC = nav.viewControllers.first as? MemoComposeViewController else{
                 fatalError()
             }
-            
-            composeVC.bind(viewModel: composeVM)
+            DispatchQueue.main.async {
+                composeVC.bind(viewModel: composeVM)
+            }
             return nav
         }
     }

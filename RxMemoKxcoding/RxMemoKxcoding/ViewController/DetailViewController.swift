@@ -9,6 +9,13 @@ import UIKit
 
 class DetailViewController: UIViewController , ViewModelBindableType{
     var viewModel : MemoDetailViewModel!
+    
+    @IBOutlet weak var contentTableView: UITableView!
+    @IBOutlet weak var delete: UIBarButtonItem!
+    @IBOutlet weak var share: UIBarButtonItem!
+    @IBOutlet weak var edit: UIBarButtonItem!
+    
+    
     func bindViewModel() {
         
     }

@@ -18,6 +18,10 @@ extension ViewModelBindableType where Self: UIViewController{
     mutating func bind(viewModel:Self.viewModelType){
         self.viewModel = viewModel
         loadViewIfNeeded()
-        bindViewModel()
+        
+
+            bindViewModel()
+        
+   
     }
 }
