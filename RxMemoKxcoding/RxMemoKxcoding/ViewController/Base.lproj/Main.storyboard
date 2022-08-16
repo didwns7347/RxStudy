@@ -77,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqP-gb-XaL">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="827" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Item" systemItem="trash" id="mhu-dG-pkR">
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,7 +89,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ggb-s2-gGL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="759"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contentCell" textLabel="LZt-pq-RtY" style="IBUITableViewCellStyleDefault" id="cAD-S6-u9K">
@@ -138,7 +138,7 @@
                             <constraint firstItem="ZqP-gb-XaL" firstAttribute="top" secondItem="Ggb-s2-gGL" secondAttribute="bottom" id="Zx0-B5-7LB"/>
                             <constraint firstItem="Ggb-s2-gGL" firstAttribute="leading" secondItem="MLY-sb-hbn" secondAttribute="leading" id="gTN-c8-ai5"/>
                             <constraint firstItem="ZqP-gb-XaL" firstAttribute="leading" secondItem="MLY-sb-hbn" secondAttribute="leading" id="piA-0h-T1g"/>
-                            <constraint firstAttribute="bottom" secondItem="ZqP-gb-XaL" secondAttribute="bottom" id="yWi-P9-YOX"/>
+                            <constraint firstAttribute="bottom" secondItem="ZqP-gb-XaL" secondAttribute="bottom" constant="20" id="yWi-P9-YOX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="메모보기" id="7Mn-7t-i46"/>

@@ -10,7 +10,7 @@ import RxSwift
 
 class MemoryStorage : MemoStorageType{
 
-    private var list = [
+     var list = [
         Memo(content: "Hello, RxSwift", insertDate: Date().addingTimeInterval(-10)),
         Memo(content: "지리게", insertDate: Date().addingTimeInterval(-20))
     ]

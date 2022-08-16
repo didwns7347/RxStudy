@@ -28,6 +28,7 @@ class MemoListViewModel : CommonViewModel{
                 }
         }
     }
+  
     
     func performUpdate(memo: Memo)-> Action<String, Void>{
         return Action { input in
@@ -40,4 +41,21 @@ class MemoListViewModel : CommonViewModel{
             return self.storage.delete(memo: memo).map { _ in }
         }
     }
+
+    func detailAction12(memo:Memo)->Action<Memo,Void> {
+        return Action{ memo in
+            let detailVM = MemoDetailViewModel(title: "메모보기", memo:memo, sceneCoordinator:self.sceneCoordinator, storage: self.storage)
+            let detailScene = Scene.detail(detailVM)
+            return self.sceneCoordinator.transition(to: detailScene, using: .push, animiate: true)
+                .asObservable().map{_ in}
+        }
+    }
+    
+    lazy var deleteAction: Action<Memo, Void> = {
+        return Action{ memo in
+            return self.storage.delete(memo: memo)
+                .map{_ in }
+        }
+    }()
+ 
 }
