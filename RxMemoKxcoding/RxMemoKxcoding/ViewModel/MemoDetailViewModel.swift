@@ -38,9 +38,9 @@ class MemoDetailViewModel:CommonViewModel{
     func performUpdate(memo: Memo)-> Action<String, Void>{
         return Action { input in
             self.storage.update(memo: memo, content: input)
-                .map{ memo -> [String] in
-                    self.selectedMemo = memo
-                    return [memo.content, self.formatter.string(from: memo.insertDate)]
+                .do(onNext: {self.selectedMemo = $0})
+                .map{
+                    return [$0.content, self.formatter.string(from: $0.insertDate)]
                 }
                 .bind(onNext: {self.contents.onNext($0)})
                 .disposed(by: self.bag)
