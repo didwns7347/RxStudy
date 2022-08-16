@@ -12,7 +12,7 @@ import Action
 
 class MemoDetailViewModel:CommonViewModel{
     let bag = DisposeBag()
-    let selectedMemo : Memo
+    var selectedMemo : Memo
     private var formatter : DateFormatter = {
         let f = DateFormatter()
         f.locale = Locale(identifier: "ko_kr")
@@ -23,6 +23,7 @@ class MemoDetailViewModel:CommonViewModel{
     
     var contents : BehaviorSubject<[String]>
     var activity : BehaviorSubject<UIActivityViewController?>
+    
     init(title: String, memo:Memo, sceneCoordinator:SceneCoordinatorType, storage: MemoStorageType){
         self.selectedMemo = memo
         contents = BehaviorSubject<[String]>(value: [memo.content, formatter.string(from: memo.insertDate)])
@@ -37,7 +38,10 @@ class MemoDetailViewModel:CommonViewModel{
     func performUpdate(memo: Memo)-> Action<String, Void>{
         return Action { input in
             self.storage.update(memo: memo, content: input)
-                .map{[$0.content, self.formatter.string(from: $0.insertDate)]}
+                .map{ memo -> [String] in
+                    self.selectedMemo = memo
+                    return [memo.content, self.formatter.string(from: memo.insertDate)]
+                }
                 .bind(onNext: {self.contents.onNext($0)})
                 .disposed(by: self.bag)
             return Observable.empty()
