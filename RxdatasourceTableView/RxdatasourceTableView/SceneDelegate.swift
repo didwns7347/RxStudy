@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  RxMemoKxcoding
+//  RxdatasourceTableView
 //
-//  Created by yangjs on 2022/08/10.
+//  Created by yangjs on 2022/08/16.
 //
 
 import UIKit
@@ -13,15 +13,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
+        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
+        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        //let storage = MemoryStorage()
-        let storage = CoreDataStorage(modelName: "RxMemoKxcoding")
-        let coordinator = SceneCoordinator(window: window!)
-        
-        let listViewModel = MemoListViewModel(title: "나의 메모", sceneCoordinator: coordinator, storage: storage)
-        let listScene = Scene.list(listViewModel)
-        
-        coordinator.transition(to: listScene, using: .root, animiate: false)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -52,7 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
 
