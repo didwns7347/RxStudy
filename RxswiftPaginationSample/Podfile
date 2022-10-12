@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'RxswiftPaginationSample' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RxswiftPaginationSample
+# UI
+pod 'SnapKit'
+pod 'Then'
+
+# Util
+pod 'RxSwift'
+pod 'RxCocoa'
+pod 'Kingfisher'
+
+# Network
+pod 'Alamofire'
+end
