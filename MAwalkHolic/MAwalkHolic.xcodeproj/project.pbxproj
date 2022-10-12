@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B2A269928F64F620041B96D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A269828F64F620041B96D /* MainViewModel.swift */; };
+		9B2A269B28F64F760041B96D /* StepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A269A28F64F760041B96D /* StepModel.swift */; };
 		9BC3859728EFB6B70052C2C8 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC3859628EFB6B70052C2C8 /* RxCocoa */; };
 		9BC3859928EFB6B70052C2C8 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC3859828EFB6B70052C2C8 /* RxRelay */; };
 		9BC3859B28EFB6B70052C2C8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC3859A28EFB6B70052C2C8 /* RxSwift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B2A269828F64F620041B96D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9B2A269A28F64F760041B96D /* StepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepModel.swift; sourceTree = "<group>"; };
 		9BC385A028EFC6080052C2C8 /* Date +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date +.swift"; sourceTree = "<group>"; };
 		9BDC6E1428EEC51100DB17E7 /* MAwalkHolic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAwalkHolic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDC6E1728EEC51100DB17E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				9BDC6E1B28EEC51100DB17E7 /* MainController.swift */,
+				9B2A269828F64F620041B96D /* MainViewModel.swift */,
+				9B2A269A28F64F760041B96D /* StepModel.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 				9BDC6E1C28EEC51100DB17E7 /* MainController.swift in Sources */,
 				9BDC6E1828EEC51100DB17E7 /* AppDelegate.swift in Sources */,
 				9BDC6E1A28EEC51100DB17E7 /* SceneDelegate.swift in Sources */,
+				9B2A269928F64F620041B96D /* MainViewModel.swift in Sources */,
+				9B2A269B28F64F760041B96D /* StepModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
