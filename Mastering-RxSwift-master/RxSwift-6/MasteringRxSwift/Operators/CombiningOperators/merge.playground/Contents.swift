@@ -36,14 +36,17 @@ enum MyError: Error {
 
 let oddNumbers = BehaviorSubject(value: 1)
 let evenNumbers = BehaviorSubject(value: 2)
-let negativeNumbers = BehaviorSubject(value: -1)
+let negativeNumbers = BehaviorSubject(value: -13)
 
 
 
+let merge = Observable.merge([oddNumbers,evenNumbers,negativeNumbers])
+merge.subscribe{event in
+    print(event)
+}.disposed(by: bag)
 
 
-
-
+oddNumbers.onNext(11)
 
 
 

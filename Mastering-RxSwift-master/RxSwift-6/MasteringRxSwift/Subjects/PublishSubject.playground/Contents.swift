@@ -24,7 +24,7 @@
 
 import UIKit
 import RxSwift
-
+import RxCocoa
 /*:
  # PublishSubject
  */
@@ -35,8 +35,32 @@ enum MyError: Error {
    case error
 }
 
+let randomNumGenerator1 = Observable<Int>.create{ observer in
+    observer.onNext(Int.random(in: 0 ..< 100))
+    return Disposables.create()
+}
+
+randomNumGenerator1.subscribe(onNext: { (element) in
+    print("observer 1 : \(element)")
+})
+randomNumGenerator1.subscribe(onNext: { (element) in
+    print("observer 2 : \(element)")
+})
 
 
 
 
+let relay = PublishRelay<String>()
 
+
+
+relay.accept("Knock knock, anyone home?")
+
+relay
+    .subscribe(onNext: {
+        print($0)
+    })
+    .disposed(by: disposeBag)
+
+relay.accept("1") // print: 1
+relay.accept("Knock knock, anyone home?")

@@ -36,12 +36,15 @@ enum MyError: Error {
 
 let numbers = PublishSubject<Int>()
 let strings = PublishSubject<String>()
+let titles = PublishSubject<String>()
 
+Observable.zip(numbers,strings,titles)
+    .subscribe(onNext:{print($0)})
+    .disposed(by: bag)
 
-
-
-
-
-
+numbers.onNext(0)
+strings.onNext("1")
+strings.onNext("2")
+titles.onNext("2")
 
 

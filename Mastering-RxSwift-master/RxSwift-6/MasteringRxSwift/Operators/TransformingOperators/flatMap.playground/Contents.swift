@@ -30,11 +30,84 @@ import RxSwift
 
 let disposeBag = DisposeBag()
 
-let redCircle = "🔴"
-let greenCircle = "🟢"
-let blueCircle = "🔵"
+//let redCircle = "🔴"
+//let greenCircle = "🟢"
+//let blueCircle = "🔵"
+//
+//let redHeart = "❤️"
+//let greenHeart = "💚"
+//let blueHeart = "💙"
+//
+//Observable.from([redCircle,greenCircle,blueCircle])
+//    .flatMap{circle -> Observable<String> in
+//        switch circle{
+//        case redCircle:
+//            return Observable.repeatElement(redHeart).take(5)
+//        case greenCircle:
+//            return Observable.repeatElement(greenHeart).take(5)
+//        case blueCircle:
+//            return Observable.repeatElement(blueHeart).take(5)
+//        default:
+//            return Observable.just("")
+//        }
+//    }.subscribe{print($0)}
+//    .disposed(by: disposeBag)
+//
+//
+//struct Student {
+//    var score: BehaviorSubject<Int>
+//}
+//
+//let ryan = Student(score: BehaviorSubject(value: 80))
+//let charlotte = Student(score: BehaviorSubject(value: 90))
+//
+//// 2
+//let student = PublishSubject<Student>()
+//
+//// 3
+//let fmEx = student
+//    .flatMap{ a in
+//        a.score
+//    }
+//let mEx = student
+//    .map{$0.score}
+//// 4
+//    mEx.subscribe(onNext: {
+//        print($0)
+//    })
+//    .disposed(by: disposeBag)
+//
+//// 5
+//student.onNext(ryan)    // Print: 80
+//
+//// 6
+//ryan.score.onNext(85)   // Print: 80 85
+//
+//// 7
+//student.onNext(charlotte)   // Print: 80 85 90
+//
+//// 8
+//ryan.score.onNext(95)   // Print: 80 85 90 95
+//
+//// 9
+//charlotte.score.onNext(100)
 
-let redHeart = "❤️"
-let greenHeart = "💚"
-let blueHeart = "💙"
+
+let a = Observable.of(1,2,3)
+let o1 = a.subscribe { event in
+    print("o1 \(event)")
+}.disposed(by: disposeBag)
+
+let o2 = a.subscribe { event in
+    print("o2 \(event)")
+}
+
+a.flatMap { a -> Observable<String> in
+    return Observable.create { observer in
+        observer.onNext("TRANS")
+        return Disposables.create()
+    }
+}.subscribe{
+    print($0)
+}
 

@@ -39,7 +39,13 @@ let languages = PublishSubject<String>()
 
 
 
+let combineLatest = Observable.combineLatest(greetings,languages)
+combineLatest.subscribe { eventq in
+    print(eventq)
+}.disposed(by: bag)
 
 
 
-
+greetings.onNext("A")
+greetings.onNext("B")
+languages.onNext("1")

@@ -36,9 +36,18 @@ enum MyError: Error {
 
 let trigger = PublishSubject<Void>()
 let data = PublishSubject<String>()
+let sample = data.sample(trigger)
+sample.subscribe { event in
+    print(event)
+}.disposed(by: bag)
 
-
-
+data.onNext("A")
+data.onNext("B")
+data.onNext("C")
+trigger.onNext(())
+trigger.onNext(())
+data.onNext("D")
+trigger.onNext(())
 
 
 

@@ -34,8 +34,9 @@ class RxCocoaCollectionViewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         listObservable
-            .bind(to: listCollectionView.rx.items(cellIdentifier: "colorCell")){row,color,cell in
+            .bind(to: listCollectionView.rx.items(cellIdentifier: "colorCell",cellType: ColorCollectionViewCell.self)){row,color,cell in
                 cell.backgroundColor = color
+                cell.hexLabel.text = color.rgbHexString
             }.disposed(by: bag)
         
         listCollectionView.rx.setDelegate(self)

@@ -34,7 +34,10 @@ let animals = Observable.from(["🐶", "🐱", "🐹", "🐼", "🐯", "🐵"])
 
 
 
-
+let concat = fruits.concat(animals)
+concat.subscribe { event in
+    print(event)
+}.disposed(by: bag)
 
 
 

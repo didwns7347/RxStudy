@@ -24,9 +24,10 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 import RxAlamofire
+import Alamofire
 
 class RxAlamofireBasicPatternTableViewController: UIViewController {
-   
+   let bag = DisposeBag()
    @IBOutlet weak var listTableView: UITableView!
    
    let list = BehaviorSubject(value: [Book]())
@@ -47,5 +48,18 @@ class RxAlamofireBasicPatternTableViewController: UIViewController {
    
    func fetchBookList() {
       
+       let response = Observable.just(booksUrlStr)
+           .map{
+               URL(string: $0)!
+           }
+           .flatMap{
+               RxAlamofire.requestData(.get, $0)
+           }.map { response,data in
+               BookList.parse(data: data)
+           }.asDriver(onErrorJustReturn: [])
+       
+       response
+           .drive(list)
+           .disposed(by:bag )
    }
 }
