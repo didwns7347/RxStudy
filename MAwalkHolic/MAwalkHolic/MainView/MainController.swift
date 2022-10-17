@@ -44,6 +44,7 @@ class MainController: UIViewController {
     }
     
     func bind(){
+        //테이블뷰
         vm.stepListLoaded.bind(to: tableView.rx.items){(tableView, row, stepinfo) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: IndexPath(row: row, section: 0))
             cell.textLabel?.text = stepinfo.date.toString()
@@ -51,16 +52,21 @@ class MainController: UIViewController {
             return cell
         }.disposed(by: bag)
         
+        //차트그리기
         vm.stepListLoaded.asDriver(onErrorJustReturn: []).drive( onNext: {[weak self] stepList in
             guard let self = self else {return }
             self.drawChart(stepList: stepList)
         }).disposed(by: bag)
         
-        vm.stepListLoaded.subscribe(onNext:{
-            $0.forEach{step in
-                print(step.getInfo)
-            }
-        }).disposed(by: bag)
+        //테이브뷰 최상단
+        vm.stepListLoaded
+            .map{_ in return true}
+            .asDriver(onErrorJustReturn: true)
+            .drive(onNext:{ _ in
+                let indexPath = NSIndexPath(row: NSNotFound, section: 0)
+                self.tableView.scrollToRow(at: indexPath as IndexPath, at: .top, animated: true)
+            })
+            .disposed(by: bag)
     }
     override func viewDidDisappear(_ animated: Bool) {
         observer = nil
