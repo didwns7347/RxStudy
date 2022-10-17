@@ -53,39 +53,13 @@ class MainController: UIViewController {
         
         vm.stepListLoaded.asDriver(onErrorJustReturn: []).drive( onNext: {[weak self] stepList in
             guard let self = self else {return }
-//            DispatchQueue.main.async {
-                var tmp  = [BarChartDataEntry]()
-                if stepList.count < 7{
-                    return
-                }
-                var cnt = 0
-                for i in (0...6).reversed(){
-                    tmp.append(BarChartDataEntry(x: Double(cnt), y: stepList[i].step))
-                    cnt+=1
-                }
-                print(tmp)
-                let chartDataSet = BarChartDataSet(entries: tmp, label: "걷기")
-                chartDataSet.colors = [.systemPink]
-                
-                let chartData = BarChartData(dataSet: chartDataSet)
-                self.chartView.data = chartData
-                // 선택 안되게
-                chartDataSet.highlightEnabled = false
-                // 줌 안되게
-                self.chartView.doubleTapToZoomEnabled = false
-                
-                print(self.chartView.xAxis.labelCount)
-                self.chartView.xAxis.labelPosition = .bottom
-                self.chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:self.axisValues)
-                
-                let minimumRecord = ChartLimitLine(limit: 7000.0, label: "7000보")
-                
-                
-                self.chartView.leftAxis.addLimitLine(minimumRecord)
-                self.chartView.leftAxis.axisMinimum = 0
-//            }
-            
-            
+            self.drawChart(stepList: stepList)
+        }).disposed(by: bag)
+        
+        vm.stepListLoaded.subscribe(onNext:{
+            $0.forEach{step in
+                print(step.getInfo)
+            }
         }).disposed(by: bag)
     }
     override func viewDidDisappear(_ animated: Bool) {
@@ -124,26 +98,56 @@ class MainController: UIViewController {
     }
     
     
+    // NOT USE
+//    func saveStepCount(stepValue: Int, date: Date, completion: @escaping (Error?) -> Void) {
+//        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
+//        let stepCountUnit: HKUnit = HKUnit.count()
+//        let stepCountQuantity = HKQuantity(unit: stepCountUnit, doubleValue: Double(stepValue))
+//
+//        let stepCountSample = HKQuantitySample(type: stepCountType, quantity: stepCountQuantity, start: date, end: date)
+//
+//        self.healthStore.save(stepCountSample) { (success, error) in
+//            if let error = error {
+//                completion(error)
+//                print("Error Saving Steps count Sample: \(error.localizedDescription)")
+//            } else {
+//                completion(nil)
+//                print("Successfully saves step count sample")
+//            }
+//        }
+//    }
     
-    //    func saveStepCount(stepValue: Int, date: Date, completion: @escaping (Error?) -> Void) {
-    //        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return }
-    //        let stepCountUnit: HKUnit = HKUnit.count()
-    //        let stepCountQuantity = HKQuantity(unit: stepCountUnit, doubleValue: Double(stepValue))
-    //
-    //        let stepCountSample = HKQuantitySample(type: stepCountType, quantity: stepCountQuantity, start: date, end: date)
-    //
-    //        self.healthStore.save(stepCountSample) { (success, error) in
-    //            if let error = error {
-    //                completion(error)
-    //                print("Error Saving Steps count Sample: \(error.localizedDescription)")
-    //            } else {
-    //                completion(nil)
-    //                print("Successfully saves step count sample")
-    //            }
-    //        }
-    //    }
-    //get post delete put
     
-    
+    func drawChart(stepList:[StepModel]){
+        var tmp  = [BarChartDataEntry]()
+        if stepList.count < 7{
+            return
+        }
+        var cnt = 0
+        for i in (0...6).reversed(){
+            tmp.append(BarChartDataEntry(x: Double(cnt), y: stepList[i].step))
+            cnt+=1
+        }
+        print(tmp)
+        let chartDataSet = BarChartDataSet(entries: tmp, label: "걷기")
+        chartDataSet.colors = [.systemPink]
+        
+        let chartData = BarChartData(dataSet: chartDataSet)
+        self.chartView.data = chartData
+        // 선택 안되게
+        chartDataSet.highlightEnabled = false
+        // 줌 안되게
+        self.chartView.doubleTapToZoomEnabled = false
+        
+        print(self.chartView.xAxis.labelCount)
+        self.chartView.xAxis.labelPosition = .bottom
+        self.chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:self.axisValues)
+        
+        let minimumRecord = ChartLimitLine(limit: 7000.0, label: "7000보")
+        
+        
+        self.chartView.leftAxis.addLimitLine(minimumRecord)
+        self.chartView.leftAxis.axisMinimum = 0
+    }
 }
 

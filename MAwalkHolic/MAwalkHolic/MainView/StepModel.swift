@@ -17,4 +17,10 @@ class StepModel: NSObject {
         self.step = step
         self.date = date
     }
+    
+    var getInfo:String  {
+        get {
+            return "\(self.date.toString()) \(self.step) "
+        }
+    }
 }
