@@ -13,6 +13,11 @@
 		9B8FBCEF294AFB110099BDB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8FBCED294AFB110099BDB9 /* Main.storyboard */; };
 		9B8FBCF1294AFB120099BDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8FBCF0294AFB120099BDB9 /* Assets.xcassets */; };
 		9B8FBCF4294AFB120099BDB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8FBCF2294AFB120099BDB9 /* LaunchScreen.storyboard */; };
+		9B8FBCFD294B117E0099BDB9 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FBCFC294B117E0099BDB9 /* Entity.swift */; };
+		9B8FBCFF294B118C0099BDB9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FBCFE294B118C0099BDB9 /* Service.swift */; };
+		9B8FBD01294B11950099BDB9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FBD00294B11950099BDB9 /* Model.swift */; };
+		9B8FBD03294B11F20099BDB9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FBD02294B11F20099BDB9 /* Repository.swift */; };
+		9B8FBD05294B12000099BDB9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8FBD04294B12000099BDB9 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		9B8FBCF0294AFB120099BDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B8FBCF3294AFB120099BDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B8FBCF5294AFB120099BDB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B8FBCFC294B117E0099BDB9 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		9B8FBCFE294B118C0099BDB9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		9B8FBD00294B11950099BDB9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9B8FBD02294B11F20099BDB9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		9B8FBD04294B12000099BDB9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,26 @@
 			children = (
 				9B8FBCE7294AFB110099BDB9 /* AppDelegate.swift */,
 				9B8FBCE9294AFB110099BDB9 /* SceneDelegate.swift */,
-				9B8FBCEB294AFB110099BDB9 /* ViewController.swift */,
+				9B8FBCFB294B116C0099BDB9 /* View */,
 				9B8FBCED294AFB110099BDB9 /* Main.storyboard */,
 				9B8FBCF0294AFB120099BDB9 /* Assets.xcassets */,
 				9B8FBCF2294AFB120099BDB9 /* LaunchScreen.storyboard */,
 				9B8FBCF5294AFB120099BDB9 /* Info.plist */,
 			);
 			path = FriedBearMVC;
+			sourceTree = "<group>";
+		};
+		9B8FBCFB294B116C0099BDB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B8FBCEB294AFB110099BDB9 /* ViewController.swift */,
+				9B8FBCFC294B117E0099BDB9 /* Entity.swift */,
+				9B8FBCFE294B118C0099BDB9 /* Service.swift */,
+				9B8FBD00294B11950099BDB9 /* Model.swift */,
+				9B8FBD02294B11F20099BDB9 /* Repository.swift */,
+				9B8FBD04294B12000099BDB9 /* ViewModel.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +162,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8FBCEC294AFB110099BDB9 /* ViewController.swift in Sources */,
+				9B8FBCFD294B117E0099BDB9 /* Entity.swift in Sources */,
+				9B8FBCFF294B118C0099BDB9 /* Service.swift in Sources */,
+				9B8FBD03294B11F20099BDB9 /* Repository.swift in Sources */,
+				9B8FBD01294B11950099BDB9 /* Model.swift in Sources */,
 				9B8FBCE8294AFB110099BDB9 /* AppDelegate.swift in Sources */,
+				9B8FBD05294B12000099BDB9 /* ViewModel.swift in Sources */,
 				9B8FBCEA294AFB110099BDB9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
