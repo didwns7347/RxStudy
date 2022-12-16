@@ -11,4 +11,4 @@
 > 2. Repository -> Service -> Model(로직용 모델) Entity를 앱에서 사용하는 부분만 가져와 비지니스 로직에서 사용하는 모델 -> MOdel로 변경
 > 3. Service -> ViewModel -> ViewModel 뷰에서 사용자에게 보여주기 위한 데이터로 모델을 변경 -> ViewModel
 
-<img width="80%" src="https://github.com/didwns7347/RxStudy/issues/1#issue-1499447890](https://user-images.githubusercontent.com/50623193/208005729-9859b066-9e63-4c2c-abe2-79dbca2695e9.png"/>
+<img width="80%" src="https://user-images.githubusercontent.com/50623193/208005729-9859b066-9e63-4c2c-abe2-79dbca2695e9.png"/>
