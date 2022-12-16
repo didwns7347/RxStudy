@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import RxRelay
 class ViewController: UIViewController {
     @IBOutlet weak var datetieLabel: UILabel!
     let vm = ViewModel()
