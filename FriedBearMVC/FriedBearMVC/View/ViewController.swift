@@ -7,18 +7,17 @@
 
 import UIKit
 import RxRelay
+import RxCocoa
+import RxSwift
+
 class ViewController: UIViewController {
     @IBOutlet weak var datetieLabel: UILabel!
+    let bag = DisposeBag()
     let vm = ViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         vm.viewDidLoad()
-        vm.onUpadted = { [weak self] in
-            DispatchQueue.main.async {
-                self?.datetieLabel.text = self?.vm.dateTimeString
-            }
-        
-        }
+        vm.dateTimeString.bind(to: datetieLabel.rx.text).disposed(by: bag)
         
     }
 
@@ -31,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onNow(_ sender: Any) {
-        self.datetieLabel.text = "Loading..."
+        datetieLabel.rx.text.onNext("Loading...")
         vm.reload()
     }
     
