@@ -21,7 +21,7 @@ class ViewController: UIViewController  , CLLocationManagerDelegate{
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리 정확도 설정
         self.locationManager.requestAlwaysAuthorization() // 위치 권한 설정 값을 받아옵니다
         
-        self.locationManager.startUpdatingLocation() // 위치 업데이트 시작
+        self.locationManager.startUpdatingLocation() // 위치 업데이트 시작ㅁ
     }
     
     
