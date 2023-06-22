@@ -23,6 +23,7 @@ struct DailyScrum :Identifiable {
             lengthInMinutes = Int(newValue)
         }
     }
+    var history: [History] = []
     
     init(id: UUID = UUID(),
          title: String,
